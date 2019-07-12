@@ -49,7 +49,7 @@ exports.post = async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ message: 'There was a problem inserting your post' });
+      .json({ message: 'There was a problem inserting your project' });
   }
 };
 
@@ -82,6 +82,6 @@ exports.delete = async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ message: 'There was an error inserting your project' });
+      .json({ message: 'There was an error deleting your project' });
   }
 };
