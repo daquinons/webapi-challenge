@@ -17,5 +17,6 @@ router.get('/projects/:id/actions', projectsController.getActions);
 
 // Actions
 router.get('/actions', actionsController.getAll);
-
+router.post('/actions', actionsController.post);
+router.get('/actions/:id', actionsController.get);
 module.exports = router;
