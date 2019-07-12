@@ -23,6 +23,20 @@ exports.get = async (req, res) => {
   }
 };
 
+exports.getActions = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const projectActions = await Projects.getProjectActions(id);
+    res.json(projectActions);
+  } catch (error) {
+    res
+      .status(500)
+      .json({
+        message: 'There was an error retrieving the actions for the project'
+      });
+  }
+};
+
 exports.post = async (req, res) => {
   try {
     const project = {
