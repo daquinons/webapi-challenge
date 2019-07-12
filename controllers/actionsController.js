@@ -13,12 +13,7 @@ exports.getAll = async (req, res) => {
 
 exports.post = async (req, res) => {
   try {
-    const action = {
-      project_id: req.body.project_id,
-      description: req.body.description,
-      notes: req.body.notes,
-      completed: req.body.completed
-    };
+    const action = req.actionBody;
     const newAction = await Actions.insert(action);
     res.status(201).json(newAction);
   } catch (error) {
@@ -30,8 +25,7 @@ exports.post = async (req, res) => {
 
 exports.get = async (req, res) => {
   try {
-    const id = req.params.id;
-    const action = await Actions.get(id);
+    const action = req.action
     res.json(action);
   } catch (error) {
     res
@@ -60,12 +54,7 @@ exports.delete = async (req, res) => {
 
 exports.put = async (req, res) => {
   try {
-    const action = {
-      project_id: req.body.project_id,
-      description: req.body.description,
-      notes: req.body.notes,
-      completed: req.body.completed
-    };
+    const action = req.actionBody;
     const id = req.params.id;
     const updatedAction = await Actions.update(id, action);
     res.json(updatedAction);
