@@ -76,6 +76,8 @@ exports.delete = async (req, res) => {
       res.json({
         message: `The project with id ${id} was successfully deleted`
       });
+    } else {
+      throw new Error();
     }
   } catch (error) {
     res
