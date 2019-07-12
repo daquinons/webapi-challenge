@@ -26,13 +26,21 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+Middleware and Routers.
+
 - [ ] Describe Middleware?
+
+Middleware it's a function that is executed in the middle of the pipeline when there is a request to the server. This function is able to access and change the Request and Response objects, perform operations on them or decide if the request should continue or stop retrieving an error.
 
 - [ ] Describe a Resource?
 
+A Resource is what an API is offering and gives back wih the different requests.
+
 - [ ] What can the API return to help clients know if a request was successful?
+A 200 status or 201 status if it was a POST request.
 
 - [ ] How can we partition our application into sub-applications?
+Using express.Router we can create different routes, each of them with its router. We could also partition them using controllers, so the mission of the router would be importing each controller and expossing them via router to a URL.
 
 ## Project Setup
 
