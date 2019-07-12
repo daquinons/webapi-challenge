@@ -19,4 +19,7 @@ router.get('/projects/:id/actions', projectsController.getActions);
 router.get('/actions', actionsController.getAll);
 router.post('/actions', actionsController.post);
 router.get('/actions/:id', actionsController.get);
+router.delete('/actions/:id', actionsController.delete);
+router.put('/actions/:id', actionsController.put);
+
 module.exports = router;
